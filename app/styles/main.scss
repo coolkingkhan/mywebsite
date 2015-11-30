@@ -1,0 +1,16 @@
+// bower:scss
+// endbower
+
+@import 'mixin';
+
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.container {
+  @include rem('max-width',980px);
+  background: #ccc;
+  margin: 0 auto;
+}
