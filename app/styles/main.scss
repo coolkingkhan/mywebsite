@@ -1,16 +1,88 @@
 // bower:scss
 // endbower
-
+@import 'reset';
+@import 'fonts/font-awesome';
 @import 'mixin';
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
+@import 'text';
 
+img {
+  width: 100%;
+}
+a {
+  color: #333;
+
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+}
 body {
   background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Oxygen', sans-serif;
+  font-style: normal;
+  font-weight: 400;  
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  @include rem('max-width',980px);
+  @include rem('max-width',960px);
+  @include rem('padding',20px);
   background: #ccc;
   margin: 0 auto;
+  border-top: #d72219 5px solid;
+  border-width: 80%;
+}
+
+.header{
+  @include rem('margin-bottom',25px);
+  &__logo a{
+    font-size: 0;
+    display: inline-block;
+    margin-top:25px;
+    img{
+      @include rem('width',176px);
+      @include rem('height',26px);
+    }
+
+  }
+
+  &__nav{
+    margin-top: 30px;
+    &-item{
+      position: relative;
+      a{
+        text-decoration: none;
+        display:block;
+        font-weight: 300;
+        &:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 10px;
+          width: 90%;
+          background-color: #333;
+          height: 1px;
+        }
+
+        &:hover{
+          color: black;
+          transition: color 0.5s;
+          &:before {
+            background-color: #d72219;
+            transition: background-color 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.divider{
+  background: url('https://api.fnkr.net/testimg/1440x140/000/FFF/?text=HasanKhan') no-repeat top left #000;
+  @include rem('height',140px);
+  display: block;
+  @include rem('margin-bottom',20px);
 }
