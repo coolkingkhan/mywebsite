@@ -8,9 +8,8 @@
 @import 'bits';
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 img {
   width: 100%;
 }
@@ -32,41 +31,44 @@ body {
   padding: 0;
 }
 
+strong {
+  font-weight: 700;
+}
 .container {
   @include rem('max-width',960px);
   @include rem('padding',20px);
   background: #ccc;
   margin: 0 auto;
-  border-top: #d72219 5px solid;
+  border-top: $main 5px solid;
   border-width: 80%;
 }
-
-.header{
+.header {
   @include rem('margin-bottom',25px);
   
-  &__logo a{
+  &__logo a {
     font-size: 0;
     display: block;
-    margin-top:25px;
+    margin-top:15px;
     text-align: center;
     
-    img{
+    img {
       @include rem('width',176px);
       @include rem('height',26px);
     }
     
-    @include desktop{
+    @include desktop {
       text-align: left;
       display: inline-block;
     }
   }
 
-  &__nav{
+  &__nav {
     margin-top: 20px;
     text-align: center;
-    &-item{
+    
+    &-item {
       position: relative;
-      a{
+      a {
         text-decoration: none;
         display:block;
         font-weight: 300;
@@ -75,20 +77,22 @@ body {
         border: 1px solid #eee;
         text-align: center;
 
-        &:before{
+        &:before {
           display: none;
         }
       }
     }
+
     @include desktop {
       text-align: right;
-      &-item a{
+      
+      &-item a {
         text-align: left;
         border: none;
         margin-top: 0;
         padding: 0;
 
-        &:before{
+        &:before {
           display: block;
           content: "";
           position: absolute;
@@ -99,21 +103,33 @@ body {
           height: 1px;
         }
 
-        &:hover{
+        &:hover {
           color: black;
           transition: color 0.5s;
 
           &:before {
-            background-color: #d72219;
+            background-color: $main;
             transition: background-color 0.5s;
           }
         }        
       }
     }
   }
+
+  &__title {
+    @include title;
+  }
+
+  &__coloured {
+    color: $main;
+  }
+
+  &__intro {
+    @include intro;
+  }
 }
 
-.divider{
+.divider {
   background: url('https://api.fnkr.net/testimg/1440x140/000/FFF/?text=HasanKhan') no-repeat top left #000;
   @include rem('height',140px);
   display: block;
