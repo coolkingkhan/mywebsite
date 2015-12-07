@@ -36,14 +36,15 @@ strong {
 }
 .container {
   @include rem('max-width',960px);
-  @include rem('padding',20px);
+  @include rem('padding',0 20px);
   background: #ccc;
   margin: 0 auto;
-  border-top: $main 5px solid;
-  border-width: 80%;
+  position: relative;
 }
 .header {
   @include rem('margin-bottom',25px);
+  @include rem('padding-top',20px);
+  border-top: $main 5px solid;
   
   &__logo a {
     font-size: 0;
