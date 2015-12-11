@@ -6,6 +6,7 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
 @import 'typography';
 @import 'bits';
+@import 'animate.css';
 
 * {
   box-sizing: border-box;
@@ -21,118 +22,235 @@ a {
     text-decoration: underline;
   }
 }
+
+.divider {
+  margin: 20px 0;
+  display: block;
+  border-top: 1px solid #c2c2c2;
+}
+
 body {
   background: #fafafa;
   font-family: 'Oxygen', sans-serif;
   font-style: normal;
-  font-weight: 400;  
+  font-weight: 300;  
   color: #333;
   margin: 0;
   padding: 0;
+  strong {
+    font-weight: 700;
+    color: black;
+  }
 }
 
-strong {
-  font-weight: 700;
-}
 .container {
   @include rem('max-width',960px);
   @include rem('padding',0 20px);
-  background: #ccc;
+  //background: #ccc;
   margin: 0 auto;
   position: relative;
-}
-.header {
-  @include rem('margin-bottom',25px);
-  @include rem('padding-top',20px);
-  border-top: $main 5px solid;
-  
-  &__logo a {
-    font-size: 0;
-    display: block;
-    margin-top:15px;
-    text-align: center;
-    
-    img {
-      @include rem('width',176px);
-      @include rem('height',26px);
-    }
-    
-    @include desktop {
-      text-align: left;
-      display: inline-block;
-    }
-  }
 
-  &__nav {
-    margin-top: 20px;
-    text-align: center;
+  .header {
+    @include rem('margin-bottom',25px);
+    @include rem('padding-top',20px);
+    border-top: $main 5px solid;
     
-    &-item {
-      position: relative;
-      a {
-        text-decoration: none;
-        display:block;
-        font-weight: 300;
-        padding: 10px 0;
-        margin-top: -1px;
-        border: 1px solid #eee;
-        text-align: center;
-
-        &:before {
-          display: none;
-        }
+    &__logo a {
+      font-size: 0;
+      display: block;
+      margin-top:15px;
+      text-align: center;
+      
+      img {
+        @include rem('width',176px);
+        @include rem('height',26px);
+      }
+      
+      @include desktop {
+        text-align: left;
+        display: inline-block;
       }
     }
 
-    @include desktop {
-      text-align: right;
+    &__nav {
+      margin-top: 20px;
+      text-align: center;
       
-      &-item a {
-        text-align: left;
-        border: none;
-        margin-top: 0;
-        padding: 0;
-
-        &:before {
-          display: block;
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 10px;
-          width: 90%;
-          background-color: #333;
-          height: 1px;
-        }
-
-        &:hover {
-          color: black;
-          transition: color 0.5s;
+      &-item {
+        position: relative;
+        a {
+          text-decoration: none;
+          display:block;
+          font-weight: 300;
+          padding: 10px 0;
+          margin-top: -1px;
+          border: 1px solid #b2b2b2;
+          text-align: center;
+          color: #797979;
 
           &:before {
-            background-color: $main;
-            transition: background-color 0.5s;
+            display: none;
           }
-        }        
+        }
+      }
+
+      @include desktop {
+        text-align: right;
+        
+        &-item a {
+          text-align: left;
+          border: none;
+          margin-top: 0;
+          padding: 0;
+
+          &:before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 10px;
+            width: 90%;
+            background-color: #b2b2b2;
+            height: 1px;
+          }
+
+          &:hover {
+            color: black;
+            transition: color 0.5s;
+
+            &:before {
+              background-color: $main;
+              transition: background-color 0.5s;
+            }
+          }        
+        }
       }
     }
-  }
 
-  &__title {
-    @include title;
-  }
+    &__title {
+      @include title;
+    }
 
-  &__coloured {
-    color: $main;
-  }
+    &__coloured {
+      color: $main;
+    }
 
-  &__intro {
-    @include intro;
+    &__intro {
+      @include intro;
+    }
+
   }
 }
 
-.divider {
+
+.break {
   background: url('https://api.fnkr.net/testimg/1440x140/000/FFF/?text=HasanKhan') no-repeat top left #000;
   @include rem('height',140px);
   display: block;
   @include rem('margin-bottom',20px);
 }
+
+.img-box {
+  overflow: hidden;
+  background: #000;
+  color: white;
+  position:relative;
+  @include rem('margin-bottom',7px);
+  display: block;
+
+  &__content {
+    color: #fff;
+    line-height: 0;
+    -webkit-transition: all 500ms ease-out .1s;
+    -moz-transition: all 500ms ease-out .1s;
+    -o-transition: all 500ms ease-out .1s;
+    transition: all 500ms ease-out .1s;
+  }
+
+  &__hover {
+    position:absolute; 
+    z-index:1;
+    top:40%;
+    left: 10%;
+    color: $main;
+
+    h3 {
+      font-size: 18px;
+      line-height: 20px;
+      font-weight:300; 
+      text-transform:uppercase; 
+      letter-spacing:1px;
+      color: #fff;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color:#fff; 
+      padding-top:10px;     
+    }
+
+    @include landscape {
+      top: 10%;
+      left: 10%;
+
+      h3 {
+        font-size:11px;
+        line-height: 14px;         
+      }
+
+      p {
+        font-size: 11px;
+        margin: 0;
+        padding: 0;        
+      }
+    }
+
+  }
+
+  img {
+    max-width: 100%;
+    width:100%;
+    height: auto;    
+  }
+
+  &__hide {
+    opacity:0
+  }
+
+  &__scaleIt {
+    opacity: 0.2;
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    transform: scale(1.1);
+  }
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 40px;
+
+  @include desktop {
+    text-align: left;
+    p {
+      text-align: right;
+    }
+  }
+
+  &__social {
+    display: block;
+    margin-bottom:20px;
+    li {
+      display: inline-block;
+      a{
+        display: block;
+        padding: 10px;
+      }
+    }
+  }
+}
+
