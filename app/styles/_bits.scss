@@ -2,9 +2,23 @@
 Colours
 *********************/
 
-$main: #d72219;
-$defaulttext: #333;
-$paleborder: #eee7dd;
-$palefootertext: #d2d0c2;
-$modulebackground: #d0cdc4;
-$dark: #333; 
+$color-primary: #d72219;
+$color-border-light: #ddd;
+$color-background: #fff;
+$color-text-default: #333;
+$color-text-light: #777;
+$color-lightest: #fff;
+$color-darkest: #000;
+$color-link: 666;
+
+
+
+
+ /*********************
+Spacing
+*********************/
+
+$mediumGutter: 20px;
+$smallGutter: $mediumGutter - 7px;
+$largeGutter: 40px;
+$hugeGutter: 80px;

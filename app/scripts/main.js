@@ -11,12 +11,12 @@ function imgBox (){
 
 	$imgBox.stop().hover(function() {
 		var $this = $(this);
-		$this.find('.img-box__hover').removeClass("fadeOutLeftBig").addClass("fadeInLeft");
-		$this.find('.img-box__content').addClass('img-box__scaleIt');
+		$this.find($imgHover).removeClass('fadeOutLeftBig').addClass('fadeInLeft');
+		$this.find($imgContent).addClass('img-box__scaleIt');
 	}, function() {
 		var $this = $(this);
-		$this.find('.img-box__hover').removeClass("fadeInLeft").addClass("fadeOutLeftBig");
-		$this.find('.img-box__content').removeClass('img-box__scaleIt');
+		$this.find($imgHover).removeClass('fadeInLeft').addClass('fadeOutLeftBig');
+		$this.find($imgContent).removeClass('img-box__scaleIt');
 	});	
 };
 

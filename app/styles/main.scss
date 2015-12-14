@@ -2,10 +2,11 @@
 // endbower
 @import 'reset';
 @import 'fonts/font-awesome';
+@import 'bits';
 @import 'mixin';
 @import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
 @import 'typography';
-@import 'bits';
+
 @import 'animate.css';
 
 * {
@@ -15,50 +16,64 @@ img {
   width: 100%;
 }
 a {
-  color: #333;
+  color: $color-text-default;
 
   &:hover {
-    color: #000;
+    color: $color-darkest;
     text-decoration: underline;
   }
 }
 
-.divider {
-  margin: 20px 0;
-  display: block;
-  border-top: 1px solid #c2c2c2;
+strong {
+  font-weight: 700;
+  color: black;
 }
 
 body {
-  background: #fafafa;
+  background: $color-lightest;
   font-family: 'Oxygen', sans-serif;
   font-style: normal;
   font-weight: 300;  
-  color: #333;
+  color: $color-text-default;
   margin: 0;
   padding: 0;
-  strong {
-    font-weight: 700;
-    color: black;
+}
+
+.divider {
+  @include rem('margin',20px 0);
+  display: block;
+  border-top: 1px solid $color-border-light;
+}
+
+.margin-top {
+  &--small {
+    @include rem('margin-top', $smallGutter);
+  }
+
+  &--medium {
+    @include rem('margin-top', $mediumGutter);
+  }
+
+  &--large {
+    @include rem('margin-top', $largeGutter);
   }
 }
 
 .container {
   @include rem('max-width',960px);
   @include rem('padding',0 20px);
-  //background: #ccc;
-  margin: 0 auto;
+  @include rem('margin',0 auto);
   position: relative;
 
   .header {
     @include rem('margin-bottom',25px);
     @include rem('padding-top',20px);
-    border-top: $main 5px solid;
+    border-top: $color-primary 5px solid;
     
     &__logo a {
+      @include rem('margin-top',15px);
       font-size: 0;
       display: block;
-      margin-top:15px;
       text-align: center;
       
       img {
@@ -73,20 +88,20 @@ body {
     }
 
     &__nav {
-      margin-top: 20px;
+      @include rem('margin-top',20px);
       text-align: center;
       
       &-item {
         position: relative;
         a {
+          @include rem('padding',10px 0);
+          @include rem('margin-top',-1px);
           text-decoration: none;
           display:block;
           font-weight: 300;
-          padding: 10px 0;
-          margin-top: -1px;
-          border: 1px solid #b2b2b2;
+          border: 1px solid $color-border-light;
           text-align: center;
-          color: #797979;
+          color: $color-text-light;
 
           &:before {
             display: none;
@@ -98,20 +113,20 @@ body {
         text-align: right;
         
         &-item a {
+          @include rem('margin-top',0px);
+          @include rem('padding',0px);
           text-align: left;
           border: none;
-          margin-top: 0;
-          padding: 0;
 
           &:before {
+            @include rem('top',0px);
+            @include rem('left',10px);
+            @include rem('height',1px);
+            width: 90%;
             display: block;
             content: "";
             position: absolute;
-            top: 0;
-            left: 10px;
-            width: 90%;
-            background-color: #b2b2b2;
-            height: 1px;
+            background-color: $color-border-light;
           }
 
           &:hover {
@@ -119,7 +134,7 @@ body {
             transition: color 0.5s;
 
             &:before {
-              background-color: $main;
+              background-color: $color-primary;
               transition: background-color 0.5s;
             }
           }        
@@ -132,7 +147,7 @@ body {
     }
 
     &__coloured {
-      color: $main;
+      color: $color-primary;
     }
 
     &__intro {
@@ -144,22 +159,22 @@ body {
 
 
 .break {
-  background: url('https://api.fnkr.net/testimg/1440x140/000/FFF/?text=HasanKhan') no-repeat top left #000;
+  background: url('https://api.fnkr.net/testimg/1440x140/000/FFF/?text=HasanKhan') no-repeat top left $color-darkest;
   @include rem('height',140px);
   display: block;
   @include rem('margin-bottom',20px);
 }
 
 .img-box {
-  overflow: hidden;
-  background: #000;
-  color: white;
-  position:relative;
   @include rem('margin-bottom',7px);
+  overflow: hidden;
+  background: $color-darkest;
+  color: $color-lightest;
+  position:relative;
   display: block;
 
   &__content {
-    color: #fff;
+    color: $color-lightest;
     line-height: 0;
     -webkit-transition: all 500ms ease-out .1s;
     -moz-transition: all 500ms ease-out .1s;
@@ -168,30 +183,30 @@ body {
   }
 
   &__hover {
+    color: $color-primary;
     position:absolute; 
     z-index:1;
     top:40%;
     left: 10%;
-    color: $main;
 
     h3 {
-      font-size: 18px;
-      line-height: 20px;
+      @include rem('font-size',18px);
+      @include rem('line-height',20px);
+      @include rem('letter-spacing',1px);
       font-weight:300; 
       text-transform:uppercase; 
-      letter-spacing:1px;
-      color: #fff;
+      color: $color-lightest;
     }
 
     p {
-      font-size: 18px;
+      @include rem('font-size',18px);
       margin: 0;
       padding: 0;
     }
 
     a {
-      color:#fff; 
-      padding-top:10px;     
+      @include rem('padding-top',10px);
+      color: $color-link;   
     }
 
     @include landscape {
@@ -199,12 +214,12 @@ body {
       left: 10%;
 
       h3 {
-        font-size:11px;
-        line-height: 14px;         
+        @include rem('font-size',11px);
+        @include rem('line-height',14px);      
       }
 
       p {
-        font-size: 11px;
+        @include rem('font-size',11px);
         margin: 0;
         padding: 0;        
       }
@@ -231,26 +246,35 @@ body {
 }
 
 .footer {
+  @include rem('font-size',14px);
+  @include rem('margin-bottom',40px);
   text-align: center;
-  margin-bottom: 40px;
 
   @include desktop {
     text-align: left;
-    p {
+    &__copyright {
       text-align: right;
     }
   }
 
   &__social {
+    @include rem('margin-bottom',20px);
     display: block;
-    margin-bottom:20px;
-    li {
+    &-item {
       display: inline-block;
       a{
+        @include rem('padding',0 10px);
         display: block;
-        padding: 10px;
+
+        &:hover {
+          color: $color-primary;
+        }
       }
     }
+  }
+
+  &__copyright {
+    @include rem('font-size',14px);
   }
 }
 

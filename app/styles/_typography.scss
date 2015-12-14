@@ -6,7 +6,7 @@
 	 font-style: normal;
 	 font-size: 36px;
 	 line-height: 47px;
-	 color: #000;
+	 color: $color-darkest;
 	 margin-bottom: 25px;	
 }
 
@@ -15,7 +15,7 @@
 	 margin-bottom: 20px;
 	 font-size: 21px;
 	 line-height: 28px;
-	 color: #797979;	
+	 color: $color-text-light;	
 }
 
 
@@ -26,7 +26,7 @@
 	 font-style: normal;
 	 font-size: 36px;
 	 line-height: 47px;
-	 color: #000;
+	 color: $color-darkest;
 }
 
 .weight2 {
