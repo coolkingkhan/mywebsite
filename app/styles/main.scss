@@ -70,25 +70,33 @@ body {
     @include rem('padding-top',20px);
     border-top: $color-primary 5px solid;
     
-    &__logo a {
-      @include rem('margin-top',15px);
-      font-size: 0;
-      display: block;
-      text-align: center;
-      
-      img {
-        @include rem('width',176px);
-        @include rem('height',26px);
-      }
-      
-      @include desktop {
-        text-align: left;
-        display: inline-block;
+    &__logo{
+      @include rem('margin-bottom',8px);
+      a{
+        font-size: 0;
+        display: block;
+        text-align: center;
+        
+        img {
+          @include rem('width',176px);
+          @include rem('height',22px);
+        }
       }
     }
 
+    @include desktop {
+      @include rem('padding-top',30px);
+
+      &__logo {
+        margin-bottom: 0;
+        a {
+          text-align: left;
+          display: inline-block;        
+        }
+      } 
+    }
+
     &__nav {
-      @include rem('margin-top',20px);
       text-align: center;
       
       &-item {
@@ -113,7 +121,7 @@ body {
         text-align: right;
         
         &-item a {
-          @include rem('margin-top',0px);
+          @include rem('margin-top',5px);
           @include rem('padding',0px);
           text-align: left;
           border: none;
@@ -155,14 +163,6 @@ body {
     }
 
   }
-}
-
-
-.break {
-  background: url('https://api.fnkr.net/testimg/1440x140/000/FFF/?text=HasanKhan') no-repeat top left $color-darkest;
-  @include rem('height',140px);
-  display: block;
-  @include rem('margin-bottom',20px);
 }
 
 .img-box {
@@ -247,7 +247,7 @@ body {
 
 .footer {
   @include rem('font-size',14px);
-  @include rem('margin-bottom',40px);
+  @include rem('margin-bottom',20px);
   text-align: center;
 
   @include desktop {
@@ -275,6 +275,7 @@ body {
 
   &__copyright {
     @include rem('font-size',14px);
+    margin-bottom: 0;
   }
 }
 
