@@ -183,6 +183,8 @@ body {
   }
 }
 
+// homepage image box
+
 .img-box {
   @include rem('margin-bottom',7px);
   overflow: hidden;
@@ -263,6 +265,9 @@ body {
   }
 }
 
+
+// footer
+
 .footer {
   @include rem('font-size',14px);
   @include rem('margin-bottom',20px);
@@ -296,4 +301,114 @@ body {
     margin-bottom: 0;
   }
 }
+
+
+// tabs and accordion on mobile
+.tabAccordion {
+    margin: 24px auto;
+    width: 100%;
+    padding: 0;
+
+    &__item {
+      list-style: none;
+      margin-top: -1px;
+      background-color: $color-lightest;
+
+      &-link {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        clear: both;
+        background-color: #efefef;
+        border: 1px solid $color-border-light;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &.active {
+          background-color: $color-primary;
+          color: $color-lightest;
+          border: 1px solid $color-primary;
+        }      
+      }
+    }
+
+    &__content {
+      float: left;
+      overflow: hidden; 
+      padding: 20px;
+      border: 1px solid $color-border-light;
+      margin-top: -1px;
+
+      &-title {
+        font-weight: 700;
+      }
+
+      &-location {
+        font-weight: 700;
+        font-style: italic;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      &-list {
+        list-style-type: none;
+        padding-left: 17px;
+        &-item {
+          text-indent: -17px;
+          margin-bottom: 8px;
+        }
+        &-item:before {
+          content: "•";
+          color: $color-primary;
+          margin-right: 10px;
+        }
+      }      
+    }
+
+  @include desktop { 
+    width: 100%; 
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      border: none;
+
+      &-link {
+        display: inline-block;
+        margin: 0;
+        border: 1px solid $color-border-light; 
+
+        &:hover {
+          background: #efefef;
+          color: $color-primary;          
+        }
+
+        &.active {
+          background-color: $color-lightest;
+          color: $color-primary;
+          border-top: $color-primary 1px solid;
+          border-bottom: $color-lightest 1px solid;
+          border-left: $color-border-light 1px solid;
+          border-right: $color-border-light 1px solid;
+        } 
+      }
+    }
+
+    &__content {
+      border: 1px solid $color-border-light;
+      margin-top: -1px;
+    }
+  }
+}
+
+[hidden] {
+  display: none;
+}
+
 

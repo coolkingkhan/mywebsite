@@ -1,5 +1,6 @@
 'use strict';
 
+// imageboxes on homepage
 function imgBox (){
 	var $imgBox = $('.img-box');
 	var $imgHover = $('.img-box__hover');
@@ -19,4 +20,56 @@ function imgBox (){
 		$this.find($imgContent).removeClass('img-box__scaleIt');
 	});	
 };
+
+// tab and accordion functionality
+function tabAccordion (){
+	var $tab = $('.tabAccordion');
+	var	$openTab = $('.tabAccordion__item .is-open');
+
+	$('.tabAccordion__content').css({'display' : 'none'});
+	$('.tabAccordion__item-link').first()
+	.addClass('active')
+	.next()
+	.addClass('is-open')
+	.show();
+	        
+	$tab.on('click', '.tabAccordion__item-link', function(e) {
+
+		e.preventDefault();
+
+	  if (!$(this).hasClass('active')) {
+	    $('.tabAccordion__item .is-open').removeClass('is-open').hide();
+	    $(this).next().toggleClass('is-open').toggle();
+	      
+	    $tab.find('.active').removeClass('active');
+	    $(this).addClass('active');
+	  } else {
+	    $('.tabAccordion__item .is-open').removeClass('is-open').hide();
+	    $(this).removeClass('active');
+	  }
+	});
+};
+
+
+// function tabAccordion () {
+// 	var $tabs = $('.tabAccordion');
+// 	var $content = $('.tabsAccordion__content');
+
+// 	$tabs.on('click', '.tabAccordion__item-link', function (e) {
+// 		e.preventDefault();
+// 		var id = $(this).attr('href');
+		
+// 		$content.filter(':not([hidden])').attr('hidden', true);
+// 		$(id).removeAttr('hidden');
+
+// 	});
+
+// };
+
+
+
+
+
+
+
 
