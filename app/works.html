@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>My Works</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- build:css(.tmp) styles/csswizardry-grids.css -->
+    <link rel="stylesheet" href="styles/csswizardry-grids.css">
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/font-awesome.min.css -->
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+      <header class="header">
+        <div class="grid">
+          <div class="grid__item desk--one-quarter">
+            <div class="header__logo">
+              <a href="index.html"><img src="images/logo.svg" alt="" width="176" height="22"></a>
+            </div>
+          </div><!--
+       --><div class="grid__item desk--three-quarters">
+            <nav class="header__nav">
+              <ul class="grid">
+                <li class="grid__item one-whole lap--one-fifth desk--one-fifth header__nav-item"><a href="about.html">About Me</a></li>
+                <li class="grid__item one-whole lap--one-fifth desk--one-fifth header__nav-item"><a href="skills.html">My Skills</a></li>
+                <li class="grid__item one-whole lap--one-fifth desk--one-fifth header__nav-item header__nav-item--active"><a href="works.html">My Work</a></li>
+                <li class="grid__item one-whole lap--one-fifth desk--one-fifth header__nav-item"><a href="contact.html">Contact Me</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <article>
+          <h1 class="header__title">What i'm good at<span class="header__coloured">.</span></h1>
+          <p class="header__intro">All of my work includes the highest level of precision programming, W3c Validated code, multibrowser and IE backwards browser compatibility and SEO friendly.</p>
+        </article>
+
+        <div class="divider"></div>
+
+        <div class="content">
+          <div id="portfolioContent"></div>
+
+          <ul class="portfolio-list grid"><!--
+            --><li class="grid__item one-whole lap--one-half desk--one-quarter portfolio-list__item"><a href="/works/nomadpharmaceuticals.html" class="portfolio-list__item-link"><img src="https://placeimg.com/600/450/people" alt=""></a></li><!--
+            --><li class="grid__item one-whole lap--one-half desk--one-quarter portfolio-list__item"><a href="/works/alderman-solicitors.html" class="portfolio-list__item-link"><img src="https://placeimg.com/600/450/nature" alt=""></a></li><!--
+            --><li class="grid__item one-whole lap--one-half desk--one-quarter portfolio-list__item"><a href="/works/londonfatwacouncil.html" class="portfolio-list__item-link"><img src="https://placeimg.com/600/450/tech" alt=""></a></li><!--
+            --><li class="grid__item one-whole lap--one-half desk--one-quarter portfolio-list__item"><a href="/works/lfbrut.html" class="portfolio-list__item-link"><img src="https://placeimg.com/600/450" alt=""></a></li>
+          </ul>
+          <div class="grid grid--wide">
+            <div class="grid__item one-whole lap--one-quarter desk--one-quarter">
+            </div>
+          </div>
+        </div>        
+      </main>
+
+      <div class="divider margin-top--small"></div>
+
+      <footer class="footer">
+        <div class="grid">
+          <div class="grid__item lap--one-whole desk--one-half">
+            <ul class="footer__social">
+              <li class="footer__social-item">Follow me</li>
+              <li class="footer__social-item"><a target="_blank" href="https://www.facebook.com/people/Hasan-Khan/708305141"><i class="fa fa-facebook"></i></a></li>
+              <li class="footer__social-item"><a target="_blank" href="https://twitter.com/coolkingkhan"><i class="fa fa-twitter"></i></a></li>
+              <li class="footer__social-item"><a target="_blank" href="http://uk.linkedin.com/in/hasankhanmanchester/"><i class="fa fa-linkedin"></i></a></li>
+              <li class="footer__social-item"><a target="_blank" href="mailto:hasan@hasankhan.co.uk"><i class="fa fa-envelope"></i></a></li>
+            </ul>            
+          </div><div class="grid__item lap--one-whole desk--one-half">
+            <p class="footer__copyright">Copyright <i class="fa fa-copyright"></i> Hasan Khan 2015. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->   
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+
+    <script>
+      $(document).ready(function(){
+        portfolio();
+      });
+    </script>
+
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+  </body>
+</html>

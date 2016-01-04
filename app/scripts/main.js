@@ -50,26 +50,22 @@ function tabAccordion (){
 	});
 };
 
+// progress bar
+function progress (){
+	$('progress').each(function() {
+	    var max = $(this).val();
+	    $(this).val(0).animate({ value: max }, { duration: 2000, easing: 'linear'});
+	});
+};
 
-// function tabAccordion () {
-// 	var $tabs = $('.tabAccordion');
-// 	var $content = $('.tabsAccordion__content');
-
-// 	$tabs.on('click', '.tabAccordion__item-link', function (e) {
-// 		e.preventDefault();
-// 		var id = $(this).attr('href');
-		
-// 		$content.filter(':not([hidden])').attr('hidden', true);
-// 		$(id).removeAttr('hidden');
-
-// 	});
-
-// };
-
-
-
-
-
-
-
-
+// works portfolio
+function portfolio (){
+	$('.portfolio-list__item-link').click(function(e){
+		e.preventDefault();
+		var portfolioLink = $(this).attr('href');
+		$('#portfolioContent').hide().load(portfolioLink).fadeIn('slow', function (){
+			$('html, body').animate({scrollTop: $('#portfolioContent').offset().top}, 1000);
+		});
+		return false;	
+	});
+};
