@@ -59,13 +59,17 @@ function progress (){
 };
 
 // works portfolio
-function portfolio (){
+function portfolio (){	
 	$('.portfolio-list__item-link').click(function(e){
 		e.preventDefault();
 		var portfolioLink = $(this).attr('href');
-		$('#portfolioContent').hide().load(portfolioLink).fadeIn('slow', function (){
-			$('html, body').animate({scrollTop: $('#portfolioContent').offset().top}, 1000);
+		$('#portfolio-content').stop().hide().load(portfolioLink).fadeIn('fast', function (){
+			$('html, body').animate({scrollTop: $('#portfolio-content').offset().top}, 1000);
+			$('.portfolio-content__close').click(function(){
+				$('#portfolio-content').fadeOut('fast');
+			});
 		});
-		return false;	
+		return false;
 	});
+
 };

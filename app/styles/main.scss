@@ -442,11 +442,37 @@ progress::-moz-progress-bar {
 
 // portfolio
 
-#portfolioContent {
+.portfolio-content {
+  position: relative;
   h3 {
-    display: block;
+    display: inline-block;
+    float: left;
     font-weight: 700;
     font-size: 20px;
+  }
+  i {
+    display: inline-block;
+    float: right;
+  }
+  p {
+    display: block;
+    float: left;
+  }
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__nav {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    &-item {
+      cursor: pointer;
+      margin-left: 20px;
+      display: block;
+    }
   }
 }
 
