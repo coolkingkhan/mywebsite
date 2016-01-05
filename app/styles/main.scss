@@ -444,11 +444,12 @@ progress::-moz-progress-bar {
 
 .portfolio-content {
   position: relative;
-  h3 {
+  &__title {
     display: inline-block;
     float: left;
     font-weight: 700;
     font-size: 20px;
+    margin-bottom: 20px;
   }
   i {
     display: inline-block;
@@ -465,13 +466,20 @@ progress::-moz-progress-bar {
     right: 0;
   }
   &__nav {
-    position: absolute;
-    bottom: 20px;
-    right: 0;
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-bottom: 20px;
     &-item {
       cursor: pointer;
       margin-left: 20px;
       display: block;
+    }
+    @include desktop {
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      margin-bottom: 0;      
     }
   }
 }

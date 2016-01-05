@@ -59,12 +59,25 @@ function progress (){
 };
 
 // works portfolio
-function portfolio (){	
+function portfolio (){
+	jQuery.fn.extend(
+	{
+	  scrollTo : function(speed, easing)
+	  {
+	    return this.each(function()
+	    {
+	      var targetOffset = $(this).offset().top;
+	      $('html,body').animate({scrollTop: targetOffset}, speed, easing);
+	    });
+	  }
+	});
+
 	$('.portfolio-list__item-link').click(function(e){
 		e.preventDefault();
 		var portfolioLink = $(this).attr('href');
 		$('#portfolio-content').stop().hide().load(portfolioLink).fadeIn('fast', function (){
-			$('html, body').animate({scrollTop: $('#portfolio-content').offset().top}, 1000);
+			//$('html, body').animate({scrollTop: $('#portfolio-content').offset().top}, 1000);
+			$('#portfolio-content').scrollTo(500);
 			$('.portfolio-content__close').click(function(){
 				$('#portfolio-content').fadeOut('fast');
 			});
