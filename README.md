@@ -7,5 +7,6 @@ recoding my online portfolio
 4. type: bower install
 5. type: grunt serve
 
-The application will automatically start and run in default browser
-to stop application, goto Terminal or Dos and press Ctrl+c and this will stop the current running watch and livereload.
+The application will automatically start and run in default browser.
+
+To stop application, goto Terminal or Dos and press Ctrl+c and this will stop the current running watch and livereload.
