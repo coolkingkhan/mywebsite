@@ -401,6 +401,7 @@ body {
     }
 
     &__content {
+      position: relative;
       border: 1px solid $color-border-light;
       margin-top: -1px;
     }
@@ -444,42 +445,46 @@ progress::-moz-progress-bar {
 
 .portfolio-content {
   position: relative;
+  display: block;
+  clear: both;
   &__title {
-    display: inline-block;
-    float: left;
+    display: block;
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 20px;
   }
   i {
     display: inline-block;
-    float: right;
   }
   p {
     display: block;
     float: left;
   }
-  &__close {
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
   &__nav {
     position: relative;
     display: inline-block;
     float: right;
-    margin-bottom: 20px;
     &-item {
       cursor: pointer;
       margin-left: 20px;
       display: block;
+      opacity: 0.9;
+      &:hover {
+        opacity: 1;
+      }
+      &--left-deselected {
+        opacity: 0.5;
+        cursor: default;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
     }
-    @include desktop {
+    @include desktop{  
       position: absolute;
-      bottom: 20px;
+      display: inline-block;
       right: 0;
-      margin-bottom: 0;      
+      bottom:0;
     }
   }
 }

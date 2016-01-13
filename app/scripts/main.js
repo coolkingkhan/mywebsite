@@ -75,9 +75,12 @@ function portfolio (){
 	$('.portfolio-list__item-link').click(function(e){
 		e.preventDefault();
 		var portfolioLink = $(this).attr('href');
+		var $window = $(window);
 		$('#portfolio-content').stop().hide().load(portfolioLink).fadeIn('fast', function (){
 			//$('html, body').animate({scrollTop: $('#portfolio-content').offset().top}, 1000);
-			$('#portfolio-content').scrollTo(500);
+			if ( $(this).width() < 900 ) { 
+				$('#portfolio-content').scrollTo(500);
+			}
 			$('.portfolio-content__close').click(function(){
 				$('#portfolio-content').fadeOut('fast');
 			});
