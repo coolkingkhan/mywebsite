@@ -472,7 +472,7 @@ progress::-moz-progress-bar {
       &:hover {
         opacity: 1;
       }
-      &--left-deselected {
+      &--deselected {
         opacity: 0.5;
         cursor: default;
         &:hover {
