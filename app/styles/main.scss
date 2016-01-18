@@ -1,11 +1,11 @@
 // bower:scss
 // endbower
 @import 'reset';
-@import 'fonts/font-awesome';
-@import 'bits';
+@import '../styles/fonts/font-awesome';
+@import 'typography';
 @import 'mixin';
 @import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
-@import 'typography';
+
 
 @import 'animate.css';
 
@@ -184,6 +184,27 @@ body {
 }
 
 // homepage image box
+
+.no-js {
+  .img-box {
+    &:hover {
+      img {
+        opacity: 0.2;
+        -webkit-filter: grayscale(100%); 
+        filter: grayscale(100%);
+        transform: scale(1.1);
+        transition: all 500ms ease-out .1s;
+      }
+      .img-box__hide{
+        -webkit-transition: all 500ms ease-out .1s;
+        -moz-transition: all 500ms ease-out .1s;
+        -o-transition: all 500ms ease-out .1s;
+        transition: all 500ms ease-out .1s;
+        opacity: 1;
+      }
+    }
+  }
+}
 
 .img-box {
   @include rem('margin-bottom',7px);
