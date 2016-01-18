@@ -25,6 +25,19 @@ function imgBox (){
 function tabAccordion (){
 	var $tab = $('.tabAccordion');
 	var	$openTab = $('.tabAccordion__item .is-open');
+	var $window = $(window);
+
+	jQuery.fn.extend(
+	{
+	  scrollTo : function(speed, easing)
+	  {
+	    return this.each(function()
+	    {
+	      var targetOffset = $(this).offset().top;
+	      $('html,body').animate({scrollTop: targetOffset}, speed, easing);
+	    });
+	  }
+	});
 
 	$('.tabAccordion__content').css({'display' : 'none'});
 	$('.tabAccordion__item-link').first()
@@ -42,7 +55,15 @@ function tabAccordion (){
 	    $(this).next().toggleClass('is-open').toggle();
 	      
 	    $tab.find('.active').removeClass('active');
-	    $(this).addClass('active');
+	    
+	    
+    	if ($window.width() < 900) {
+    		$(this).addClass('active').scrollTo(500);
+    	}
+    	else {
+    		$(this).addClass('active');	
+    	}
+
 	  } else {
 	    $('.tabAccordion__item .is-open').removeClass('is-open').hide();
 	    $(this).removeClass('active');
