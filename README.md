@@ -1,5 +1,5 @@
 # mywebsite
-recoding my online portfolio
+recoding my online portfolio using yeoman scaffolding http://yeoman.io/
 
 Pre-requisites
 install node.js https://nodejs.org/en/
