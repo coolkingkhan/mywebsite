@@ -1,13 +1,12 @@
 // bower:scss
 // endbower
-@import 'reset';
+@import '../styles/reset';
 @import '../styles/fonts/font-awesome';
-@import 'typography';
-@import 'mixin';
+@import '../styles/typography';
+@import '../styles/mixin';
 @import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
-
-
-@import 'animate.css';
+@import '../styles/font-awesome.min';
+@import '../styles/animate';
 
 * {
   box-sizing: border-box;
