@@ -227,7 +227,7 @@ module.exports = function (grunt) {
           'scripts/**/*.js',
           'styles/**/*.css',
           'images/**/*.*',
-          'styles/fonts/**/*.*',
+          'fonts/**/*.*',
           '*.{ico,png}'
         ]
       }
