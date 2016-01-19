@@ -166,7 +166,10 @@ body {
         }
       }
     }
+  }
+}
 
+.main {
     &__title {
       @include title;
     }
@@ -178,8 +181,6 @@ body {
     &__intro {
       @include intro;
     }
-
-  }
 }
 
 // homepage image box
