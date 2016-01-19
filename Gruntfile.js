@@ -167,9 +167,9 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     sass: {
       options: {
-        sourceMap: true,
-        sourceMapEmbed: true,
-        sourceMapContents: true,
+        sourceMap: false,
+        sourceMapEmbed: false,
+        sourceMapContents: false,
         includePaths: ['.']
       },
       dist: {
@@ -219,11 +219,16 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= config.dist %>/scripts/**/*.js',
-          '<%= config.dist %>/styles/**/*.css',
-          '<%= config.dist %>/images/**/*.*',
-          '<%= config.dist %>/styles/fonts/**/*.*',
-          '<%= config.dist %>/*.{ico,png}'
+          // '<%= config.dist %>/scripts/**/*.js',
+          // '<%= config.dist %>/styles/**/*.css',
+          // '<%= config.dist %>/images/**/*.*',
+          // '<%= config.dist %>/styles/fonts/**/*.*',
+          // '<%= config.dist %>/*.{ico,png}'
+          'scripts/**/*.js',
+          'styles/**/*.css',
+          'images/**/*.*',
+          'styles/fonts/**/*.*',
+          '*.{ico,png}'
         ]
       }
     },
@@ -334,6 +339,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             'images/**/*.webp',
+            'fonts/**/*.*',
             '**/*.html',
             'styles/fonts/**/*.*'
           ]
