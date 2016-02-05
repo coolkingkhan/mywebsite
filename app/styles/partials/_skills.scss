@@ -1,0 +1,36 @@
+// skills progress bar
+
+#skills span {
+    top: -35px;
+    left: 20px;
+    position: relative;
+    color: $color-lightest;
+}
+
+progress {
+    background-color: $color-border-light;
+    height: 2.5em;
+    width: 100%;
+    border: none;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    appearance: none;
+    color: $color-primary;
+}
+
+progress[value]{
+  background-color: $color-border-light;
+  color: $color-primary;
+}
+
+progress::-webkit-progress-bar {
+    background-color: $color-border-light;
+}
+
+progress::-webkit-progress-value {
+    background-color: $color-primary;
+}
+
+progress::-moz-progress-bar {
+    background-color: $color-primary;
+}

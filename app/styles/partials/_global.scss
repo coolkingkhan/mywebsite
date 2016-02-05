@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+a {
+  color: $color-text-default;
+
+  &:hover {
+    color: $color-darkest;
+    text-decoration: underline;
+  }
+}
+
+strong {
+  font-weight: 700;
+  color: black;
+}
+
+body {
+  background: $color-lightest;
+  font-family: 'Oxygen', sans-serif;
+  font-style: normal;
+  font-weight: 300;  
+  color: $color-text-default;
+  margin: 0;
+  padding: 0;
+}

@@ -75,7 +75,7 @@ function tabAccordion (){
 function progress (){
 	$('progress').each(function() {
 	    var max = $(this).val();
-	    $(this).val(0).animate({ value: max }, { duration: 800, easing: 'linear'});
+	    $(this).val(0).animate({ value: max }, { duration: 500, easing: 'linear'});
 	});
 };
 

@@ -1,0 +1,58 @@
+// portfolio
+
+.portfolio-content {
+  position: relative;
+  display: block;
+  clear: both;
+  &__title {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  i {
+    display: inline-block;
+  }
+  p {
+    display: block;
+    float: left;
+  }
+  &__nav {
+    position: relative;
+    display: inline-block;
+    float: right;
+    &-item {
+      cursor: pointer;
+      margin-left: 20px;
+      display: block;
+      opacity: 0.9;
+      &:hover {
+        opacity: 1;
+      }
+      &--deselected {
+        opacity: 0.5;
+        cursor: default;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+    @include desktop{  
+      position: absolute;
+      display: inline-block;
+      right: 0;
+      bottom:0;
+    }
+  }
+}
+
+.portfolio-list {
+  &__item {
+    &-link {
+      display: block;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// footer
+
+.footer {
+  @include rem('font-size',14px);
+  @include rem('margin-bottom',20px);
+  text-align: center;
+
+  @include desktop {
+    text-align: left;
+    &__copyright {
+      text-align: right;
+    }
+  }
+
+  &__social {
+    @include rem('margin-bottom',20px);
+    display: block;
+    &-item {
+      display: inline-block;
+      a{
+        @include rem('padding',0 10px);
+        display: block;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    @include rem('font-size',14px);
+    margin-bottom: 0;
+  }
+}

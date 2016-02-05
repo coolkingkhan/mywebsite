@@ -1,0 +1,104 @@
+// homepage image box
+
+// javascript turned off
+.no-js {
+  .img-box {
+    &:hover {
+      img {
+        opacity: 0.2;
+        -webkit-filter: grayscale(100%); 
+        filter: grayscale(100%);
+        transform: scale(1.1);
+        transition: all 500ms ease-out .1s;
+      }
+      .img-box__hide{
+        -webkit-transition: all 500ms ease-out .1s;
+        -moz-transition: all 500ms ease-out .1s;
+        -o-transition: all 500ms ease-out .1s;
+        transition: all 500ms ease-out .1s;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.img-box {
+  @include rem('margin-bottom',7px);
+  overflow: hidden;
+  background: $color-darkest;
+  color: $color-lightest;
+  position:relative;
+  display: block;
+
+  &__content {
+    color: $color-lightest;
+    line-height: 0;
+    -webkit-transition: all 500ms ease-out .1s;
+    -moz-transition: all 500ms ease-out .1s;
+    -o-transition: all 500ms ease-out .1s;
+    transition: all 500ms ease-out .1s;
+  }
+
+  &__hover {
+    color: $color-primary;
+    position:absolute; 
+    z-index:1;
+    top:40%;
+    left: 10%;
+
+    h3 {
+      @include rem('font-size',18px);
+      @include rem('line-height',20px);
+      @include rem('letter-spacing',1px);
+      margin-bottom: 0;
+      font-weight:300; 
+      text-transform:uppercase; 
+      color: $color-lightest;
+    }
+
+    p {
+      @include rem('font-size',18px);
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      @include rem('padding-top',10px);
+      color: $color-link;   
+    }
+
+    @include landscape {
+      top: 10%;
+      left: 10%;
+
+      h3 {
+        @include rem('font-size',11px);
+        @include rem('line-height',14px);      
+      }
+
+      p {
+        @include rem('font-size',11px);
+        margin: 0;
+        padding: 0;        
+      }
+    }
+
+  }
+
+  img {
+    max-width: 100%;
+    width:100%;
+    height: auto;    
+  }
+
+  &__hide {
+    opacity:0
+  }
+
+  &__scaleIt {
+    opacity: 0.2;
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    transform: scale(1.1);
+  }
+}
